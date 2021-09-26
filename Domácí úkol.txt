@@ -1,0 +1,23 @@
+// 1)
+SELECT name, address FROM FamousVilla WHERE architecturalStyle != 'functionalismus' AND (constructionCompleted - constructionStated > 1)
+
+// 2)
+SELECT name FROM FamousVilla WHERE address LIKE '%Pisárky'
+
+// 3)
+INSERT INTO FamousVilla VALUES (10, 'První nová vila', 'Holub', 'Zikmund Kerekes', 1988, 2021, 'functionalismus', 'Lipová 22, čp. 123, Liberec')
+INSERT INTO FamousVilla VALUES (11, 'Druhá nová vila', 'Holub', 'Zikmund Kerekes', 1988, 2021, 'functionalismus', 'Lipová 22, čp. 456, Liberec')
+
+// 4)
+SELECT * FROM FamousVilla WHERE name = 'Löw-Beerova vila';
+UPDATE FamousVilla SET architect = 'Norbert Schlesinger', constructionCompleted = 1935 WHERE name = 'Löw-Beerova vila'; 
+SELECT * FROM FamousVilla WHERE name = 'Löw-Beerova vila';
+
+// 5)
+DELETE FROM FamousVilla WHERE architecturalStyle = 'purismus' OR architecturalStyle = 'secese';
+SELECT * FROM FamousVilla;
+
+// 6)
+INSERT INTO FamousVilla (architect, constructionStated, architecturalStyle, address)
+VALUES ('Richard Načrtl', 2021, 'modern', 'Karlovská 624, Dolní Kounice');
+SELECT * FROM FamousVilla;
